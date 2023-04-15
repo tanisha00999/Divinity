@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carbon Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="try.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="carbon.html">Carbon Footprint</a></li>
+            <li><a href="sus.html">Sustainability</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <h1>Sustainable Solutions</h1>
+        <p>Humanity is Divinity</p>
+      </header>
+    <h1>Carbon Calculator</h1>
+    <form>
+      <label for="miles">Number of miles driven:</label>
+      <input type="number" id="miles" name="miles" required><br><br>
+      <label for="mpg">Miles per gallon:</label>
+      <input type="number" id="mpg" name="mpg" required><br><br>
+      <label for="gas">Gasoline used per gallon:</label>
+      <input type="number" id="gas" name="gas" required><br><br>
+      <button type="button" onclick="calculate()">Calculate</button><br><br>
+      <label for="result">Carbon emissions:</label>
+      <output id="result" name="result"></output>
+    </form>
+    <script>
+      function calculate() {
+        var miles = document.getElementById("miles").value;
+        var mpg = document.getElementById("mpg").value;
+        var gas = document.getElementById("gas").value;
+        var carbon = miles / mpg * gas * 19.64;
+        document.getElementById("result").value = carbon.toFixed(2) + " lbs CO2e";
+      }
+    </script>
+  </body>
+</html>
